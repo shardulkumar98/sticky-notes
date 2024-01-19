@@ -49,7 +49,7 @@ const Navbar = ({ setData }: any) => {
           initial="hidden"
           animate="visible"
           whileHover={{ scale: 1.2 }}
-          className="font-dancing-script text-4xl"
+          className="font-dancing-script text-2xl md:text-4xl"
         >
           Sticky Notes
         </motion.div>
@@ -70,11 +70,11 @@ const Navbar = ({ setData }: any) => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="w-[100%] fixed h-[100vh] flex justify-center items-center"
+            className="w-[100%] fixed h-[100vh] z-[9999] flex justify-center items-center"
           >
             <form
               onSubmit={handleSubmit(onhandleSubmit)}
-              className="flex flex-col gap-5 w-[90%] md:w-[80%] lg:w-[80%] p-5 rounded-[8px] bg-white "
+              className="flex flex-col gap-5 w-[90%] md:w-[80%] lg:w-[80%] px-8 py-5 rounded-[8px] bg-white "
             >
               <motion.div
                 variants={inputVariants}
@@ -108,7 +108,7 @@ const Navbar = ({ setData }: any) => {
                 variants={inputVariants}
                 initial="hidden"
                 animate="visible"
-                className="flex justify-center gap-5 w-full"
+                className="flex justify-center gap-5 md:gap-10 lg:gap:10 w-[full]"
               >
                 <motion.button
                   className="bg-lime-600 py-2 px-5 rounded text-white w-full"

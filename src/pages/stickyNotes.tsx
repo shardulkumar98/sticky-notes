@@ -19,7 +19,7 @@ const StickyNotes = () => {
   return (
     <div className="flex flex-col ">
       <Navbar setData={setData} />
-      <div className="p-5 flex flex-wrap gap-5 w-full">
+      <div className="p-5 flex flex-wrap justify-center md:justify-start lg:justify-start gap-5 w-full ">
         {data?.slice(1).map((e: any, index: number) => (
           <motion.div
             variants={noteVariant}
@@ -28,7 +28,7 @@ const StickyNotes = () => {
             initial="hidden"
             animate="visible"
             key={index}
-            className="border-2 border-black w-60 h-80 p-2 rounded-lg scroll-auto"
+            className=" border-2 border-black w-60 h-80 p-2 rounded-lg scroll-auto"
           >
             <div className="text-center text-xl font-semibold">{e?.title}</div>
             <div className="scroll-auto">{e?.note}</div>
