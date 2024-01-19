@@ -13,7 +13,6 @@ const Navbar = ({ setData }: any) => {
       setData((pre: any) => [...pre, data]);
     }
     reset();
-    // setIsModalOpen(false);
   };
 
   const titleVariant = {
@@ -75,7 +74,7 @@ const Navbar = ({ setData }: any) => {
           >
             <form
               onSubmit={handleSubmit(onhandleSubmit)}
-              className="flex flex-col gap-5 w-2/4 p-5 rounded-[8px] bg-white "
+              className="flex flex-col gap-5 w-[90%] md:w-[80%] lg:w-[80%] p-5 rounded-[8px] bg-white "
             >
               <motion.div
                 variants={inputVariants}

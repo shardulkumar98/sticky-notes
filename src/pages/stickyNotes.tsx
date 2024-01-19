@@ -4,7 +4,6 @@ import { useState } from "react";
 
 const StickyNotes = () => {
   const [data, setData] = useState([{}]);
-  console.log("data", data);
   const noteVariant = {
     hidden: {
       opacity: 0,
@@ -12,7 +11,7 @@ const StickyNotes = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 2,
+        duration: 1,
       },
     },
   };
@@ -20,7 +19,7 @@ const StickyNotes = () => {
   return (
     <div className="flex flex-col ">
       <Navbar setData={setData} />
-      <div className="p-5 flex flex-wrap gap-5 w-full ">
+      <div className="p-5 flex flex-wrap gap-5 w-full">
         {data?.slice(1).map((e: any, index: number) => (
           <motion.div
             variants={noteVariant}
