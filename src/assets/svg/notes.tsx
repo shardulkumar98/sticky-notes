@@ -8,8 +8,15 @@ const NoteSvg = (props: any) => {
     },
     visible: {
       opacity: 1,
-      rotate: 0,
-      transition: { duration: 1 },
+      scale: [1, 1.1, 1.1, 1, 1],
+      rotate: [0, 0, 270, 270, 0],
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+        times: [0, 0.2, 0.5, 0.8, 1],
+        repeat: Infinity,
+        repeatDelay: 1,
+      },
     },
   };
 

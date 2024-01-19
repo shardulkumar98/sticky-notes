@@ -3,9 +3,14 @@ const AddMore = (props: any) => {
   const svgVariant = {
     hidden: {
       opacity: 0,
+      rotate: 180,
     },
     visible: {
       opacity: 1,
+      rotate: 0,
+      transition: {
+        duration: 1,
+      },
     },
   };
 
