@@ -13,7 +13,7 @@ const Navbar = ({ setData }: any) => {
       setData((pre: any) => [...pre, data]);
     }
     reset();
-    setIsModalOpen(false);
+    // setIsModalOpen(false);
   };
 
   const titleVariant = {
@@ -24,6 +24,19 @@ const Navbar = ({ setData }: any) => {
   const modalVaridant = {
     hidden: { opacity: 0, scale: 0, transition: { duration: 0.5 } },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
+
+  const buttonVariant = {
+    onTap: { scale: 0.8 },
+    onHover: { scale: 1.1 },
+  };
+
+  const inputVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 1, delay: 0.5 },
+    },
   };
 
   return (
@@ -64,37 +77,60 @@ const Navbar = ({ setData }: any) => {
               onSubmit={handleSubmit(onhandleSubmit)}
               className="flex flex-col gap-5 w-2/4 p-5 rounded-[8px] bg-white "
             >
-              <div className="font-dancing-script font-semibold text-2xl">
+              <motion.div
+                variants={inputVariants}
+                initial="hidden"
+                animate="visible"
+                className="font-dancing-script font-semibold text-2xl"
+              >
                 Add Note
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                variants={inputVariants}
+                initial="hidden"
+                animate="visible"
+              >
                 <input
                   placeholder="Title"
                   {...register("title")}
                   className=" w-full border-2  p-2"
                 />
-              </div>
-              <textarea
+              </motion.div>
+              <motion.textarea
+                variants={inputVariants}
+                initial="hidden"
+                animate="visible"
                 placeholder="write here..."
                 {...register("note")}
                 className=" border-2 p-2"
                 rows={8}
               />
-              <div className="flex justify-center gap-5 w-full">
-                <button
+              <motion.div
+                variants={inputVariants}
+                initial="hidden"
+                animate="visible"
+                className="flex justify-center gap-5 w-full"
+              >
+                <motion.button
                   className="bg-lime-600 py-2 px-5 rounded text-white w-full"
+                  variants={buttonVariant}
+                  whileHover="onHover"
+                  whileTap="onTap"
                   type="submit"
                 >
                   Save
-                </button>
+                </motion.button>
                 <motion.button
+                  variants={buttonVariant}
+                  whileHover="onHover"
+                  whileTap="onTap"
                   className="bg-red-800 py-2 px-5 rounded text-white w-full"
                   type="button"
                   onClick={() => setIsModalOpen(false)}
                 >
                   Cancel
                 </motion.button>
-              </div>
+              </motion.div>
             </form>
           </motion.div>
         )}
