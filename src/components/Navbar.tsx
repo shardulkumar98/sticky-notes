@@ -57,6 +57,7 @@ const Navbar = ({ setData }: any) => {
             variants={modalVaridant}
             initial="hidden"
             animate="visible"
+            exit="hidden"
             className="w-[100%] fixed h-[100vh] flex justify-center items-center"
           >
             <form

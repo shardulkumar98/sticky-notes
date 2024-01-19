@@ -29,10 +29,10 @@ const StickyNotes = () => {
             initial="hidden"
             animate="visible"
             key={index}
-            className="border-2 border-black w-60 h-80 p-2"
+            className="border-2 border-black w-60 h-80 p-2 rounded-lg scroll-auto"
           >
             <div className="text-center text-xl font-semibold">{e?.title}</div>
-            <div>{e?.note}</div>
+            <div className="scroll-auto">{e?.note}</div>
           </motion.div>
         ))}
       </div>
